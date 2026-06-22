@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timmy Kay Case Study | Summit VA Agency</title>
+  <meta name="description" content="A sample case study showing how Summit VA Agency would support Timmy Kay, an emerging singer, with operations, admin, and artist management.">
+  <meta name="theme-color" content="#1E0F2E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1E0F2E;
+      --bg-deep: #160B22;
+      --surface: #2A1740;
+      --surface2: #341F4E;
+      --gold: #C9963A;
+      --gold-light: #E8B86D;
+      --lav: #A99BBE;
+      --text: #F0EBF8;
+      --text-muted: #8A7A9E;
+      --border: rgba(169,155,190,0.15);
+      --radius: 12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 5%;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(30,15,46,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      background: var(--gold);
+      color: var(--bg-deep);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .logo-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .nav-back {
+      color: var(--lav);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      padding: 5rem 5% 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(201,150,58,0.15);
+      border: 1px solid rgba(201,150,58,0.35);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .hero-sub {
+      color: var(--lav);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text);
+      max-width: 640px;
+      line-height: 1.75;
+      opacity: 0.85;
+    }
+
+    .disclaimer {
+      margin-top: 2rem;
+      padding: 1rem 1.25rem;
+      background: rgba(169,155,190,0.07);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 5%;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 4rem 5%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .section p {
+      color: var(--lav);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    /* CHALLENGE CARDS */
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .challenge-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .challenge-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .challenge-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .challenge-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* APPROACH STEPS */
+    .steps {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .step-number {
+      background: rgba(201,150,58,0.12);
+      border: 1px solid rgba(201,150,58,0.3);
+      color: var(--gold);
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .step-content p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* RESULTS */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .result-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .result-card .stat {
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .result-card .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* SERVICES USED */
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .service-tag {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--lav);
+      font-size: 0.82rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 100px;
+    }
+
+    /* QUOTE */
+    .quote-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-top: 2rem;
+      position: relative;
+    }
+
+    .quote-mark {
+      font-family: 'Fraunces', serif;
+      font-size: 4rem;
+      color: var(--gold);
+      line-height: 0.5;
+      display: block;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+
+    .quote-block blockquote {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .quote-attr {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 4rem 5%;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-section p {
+      color: var(--lav);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--bg-deep);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--lav); transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem 5%;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      .step { grid-template-columns: 44px 1fr; }
+      .hero { padding: 3rem 5% 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-mark">SVA</span>
+      <span class="logo-name">Summit VA Agency</span>
+    </a>
+    <a href="index.html#case-studies" class="nav-back">← Back to Case Studies</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="badge">Sample Case Study · 2026</span>
+    <h1>Timmy Kay</h1>
+    <p class="hero-sub">Emerging Singer · Artist Operations Support</p>
+    <p class="hero-desc">
+      Timmy Kay is a talented new voice stepping into the music industry with passion and drive — but without the operational foundation to match. This case study walks through how Summit VA Agency would set him up for a sustainable, professional launch from day one.
+    </p>
+    <div class="disclaimer">
+      This is a sample case study built to illustrate Summit VA's approach. It is not a record of completed work.
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- THE CHALLENGE -->
+  <section class="section">
+    <p class="section-label">The Challenge</p>
+    <h2>Starting out with talent — but no structure</h2>
+    <p>
+      Timmy is at the very beginning of his music career. He has the voice, the vision, and the hunger — but like most emerging artists, he's doing everything alone: managing his own emails, missing booking inquiries, posting inconsistently, and losing time to admin that should be going into his craft.
+    </p>
+    <p>
+      Without a proper operations layer, early opportunities get missed and momentum stalls before it even begins.
+    </p>
+
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <div class="icon">📬</div>
+        <h3>No inbox management</h3>
+        <p>Booking inquiries and collaboration DMs going unanswered or lost.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="icon">📅</div>
+        <h3>No release calendar</h3>
+        <p>Music drops without a proper rollout plan, content strategy, or promotion timeline.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="icon">💸</div>
+        <h3>No financial tracking</h3>
+        <p>No system for tracking gig payments, expenses, or earnings — just chaos.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="icon">🔗</div>
+        <h3>No digital presence system</h3>
+        <p>Bio links, EPK, and press assets scattered or non-existent.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- THE APPROACH -->
+  <section class="section">
+    <p class="section-label">Our Approach</p>
+    <h2>Building the foundation behind the music</h2>
+    <p>Summit VA steps in as Timmy's back-office operations partner — so he can stay focused on creating while we handle everything else.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Artist Onboarding & Setup</h3>
+          <p>We start with a full operations audit — what tools he has, what's missing, and what needs to be built from scratch. We set up a professional Gmail, Google Drive structure, and a simple CRM to track contacts, venues, and opportunities.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Electronic Press Kit (EPK)</h3>
+          <p>We build a clean, professional EPK with his bio, high-res photos, links to music, and booking contact info — the first thing any venue, playlist curator, or label will ask for.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Release Rollout Planning</h3>
+          <p>For every single or project, we create a structured 4–6 week rollout calendar covering teaser content, release day, press outreach, and post-release engagement — so nothing is left to last-minute scrambling.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Inbox & Booking Coordination</h3>
+          <p>We manage his professional inbox, respond to inquiries with templates we've crafted together, and keep a live tracker of all gig opportunities — confirmed, pending, and passed.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h3>Financial Tracking & Admin</h3>
+          <p>We set up a simple income and expense tracker, ensure gig contracts are filed properly, and send weekly financial summaries — so Timmy always knows where he stands.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">6</div>
+        <div class="step-content">
+          <h3>Ongoing Executive Support</h3>
+          <p>Monthly check-ins, task management, and priority planning to make sure as his career grows, the operations keep up with him — not the other way around.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- PROJECTED OUTCOMES -->
+  <section class="section">
+    <p class="section-label">Projected Outcomes</p>
+    <h2>What changes when operations are in place</h2>
+    <p>Based on our standard artist onboarding approach, here's what an emerging artist like Timmy can realistically expect within the first 90 days of working with Summit VA.</p>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <span class="stat">90%</span>
+        <span class="stat-label">Reduction in missed booking inquiries</span>
+      </div>
+      <div class="result-card">
+        <span class="stat">3×</span>
+        <span class="stat-label">More consistent content & release rollouts</span>
+      </div>
+      <div class="result-card">
+        <span class="stat">10+</span>
+        <span class="stat-label">Hours saved per week on admin tasks</span>
+      </div>
+      <div class="result-card">
+        <span class="stat">100%</span>
+        <span class="stat-label">Professional presence with EPK & press assets</span>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <span class="quote-mark">"</span>
+      <blockquote>
+        Artists don't fail because of lack of talent. They stall because there's no one making sure the right things happen at the right time. That's exactly what Summit VA is here for.
+      </blockquote>
+      <p class="quote-attr">— Ini, Founder, Summit VA Agency</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SERVICES USED -->
+  <section class="section">
+    <p class="section-label">Services Applied</p>
+    <h2>What Summit VA brought to this engagement</h2>
+    <div class="services-list">
+      <span class="service-tag">Artist Management Support</span>
+      <span class="service-tag">Executive Assistance</span>
+      <span class="service-tag">Inbox & Booking Coordination</span>
+      <span class="service-tag">Release Planning</span>
+      <span class="service-tag">EPK Creation</span>
+      <span class="service-tag">Financial Tracking</span>
+      <span class="service-tag">Systems & Operations Setup</span>
+      <span class="service-tag">CRM Management</span>
+      <span class="service-tag">Content Calendar Management</span>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to build your operations foundation?</h2>
+    <p>Whether you're just starting out or already gaining traction, Summit VA Agency helps artists focus on what matters most — the music.</p>
+    <div class="cta-buttons">
+      <a href="https://calendly.com" class="btn-primary">Book a call →</a>
+      <a href="index.html" class="btn-outline">Back to home</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Summit VA Agency. All rights reserved.</p>
+    <p>Sample case study — built to illustrate our approach.</p>
+  </footer>
+
+</body>
+</html>
